@@ -1,36 +1,44 @@
 package negocios;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.entidades.Evento;
 
+import repositorio.EventoRepositorio;
+
 public class EventoServicoImpl implements EventoServico {
-	private List<Evento> eventos = new ArrayList<>();
 
-    @Override
-    public List<Evento> obterTodosEventos() {
-        return eventos;
-    }
+	@Autowired
+	private EventoRepositorio eventoRepositorio;
 
-    @Override
-    public Evento obterEventoPorId(Long idEvento) {
-        // Implemente a lógica para obter um evento pelo ID
-        return null;
-    }
+	public EventoServicoImpl(EventoRepositorio eventoRepositorio) {
+		this.eventoRepositorio = eventoRepositorio;
+	}
 
-    @Override
-    public void adicionarEvento(Evento evento) {
-        // Implemente a lógica para adicionar um novo evento
-    }
+	@Override
+	public List<Evento> obterTodosEventos() {
+		return eventoRepositorio.obterTodosEventos();
+	}
 
-    @Override
-    public void atualizarEvento(Evento evento) {
-        // Implemente a lógica para atualizar um evento existente
-    }
+	@Override
+	public Evento obterEventoPorId(int idEvento) {
+		return eventoRepositorio.obterEventoPorId(idEvento);
+	}
 
-    @Override
-    public void excluirEvento(Long idEvento) {
-        // Implemente a lógica para excluir um evento pelo ID
-    }
+	@Override
+	public void adicionarEvento(Evento evento) {
+		eventoRepositorio.adicionarEvento(evento);
+	}
+
+	@Override
+	public void atualizarEvento(Evento evento) {
+		eventoRepositorio.atualizarEvento(evento);
+	}
+
+	@Override
+	public void excluirEvento(int idEvento) {
+		eventoRepositorio.excluirEvento(idEvento);
+	}
 }

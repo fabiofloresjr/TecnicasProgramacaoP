@@ -4,14 +4,14 @@ import java.time.LocalDateTime;
 
 public class Evento {
 	private String titulo;
-	private LocalDateTime horarioInicio;
-	private LocalDateTime horarioFim;
+	private LocalDateTime dataInicio;
+	private LocalDateTime dataFinal;
 	private int id;
 
-	public Evento(String titulo, LocalDateTime horarioInicio, LocalDateTime horarioFim) {
+	public Evento(String titulo, LocalDateTime dataInicio, LocalDateTime dataFinal) {
 		this.titulo = titulo;
-		this.horarioInicio = horarioInicio;
-		this.horarioFim = horarioFim;
+		this.dataInicio = dataInicio;
+		this.dataFinal = dataFinal;
 	}
 
 	public Evento() {
@@ -26,20 +26,20 @@ public class Evento {
 		this.titulo = titulo;
 	}
 
-	public LocalDateTime getHorarioInicio() {
-		return horarioInicio;
+	public LocalDateTime getDataInicio() {
+		return dataInicio;
 	}
 
-	public void setHorarioInicio(LocalDateTime horarioInicio) {
-		this.horarioInicio = horarioInicio;
+	public void setHorarioInicio(LocalDateTime dataInicio) {
+		this.dataInicio = dataInicio;
 	}
 
-	public LocalDateTime getHorarioFim() {
-		return horarioFim;
+	public LocalDateTime getDataFinal() {
+		return dataFinal;
 	}
 
-	public void setHorarioFim(LocalDateTime horarioFim) {
-		this.horarioFim = horarioFim;
+	public void setHorarioFim(LocalDateTime dataFinal) {
+		this.dataFinal = dataFinal;
 	}
 
 	public int getId() {
@@ -51,12 +51,12 @@ public class Evento {
 	}
 
 	public boolean isEventoFuturo() {
-		return horarioInicio.isAfter(LocalDateTime.now());
+		return dataInicio.isAfter(LocalDateTime.now());
 	}
 
 	@Override
 	public String toString() {
-		return "Evento{" + "id='" + id + '\'' + "titulo='" + titulo + '\'' + ", horarioInicio=" + horarioInicio
-				+ ", horarioFim=" + horarioFim + '}';
+		return "Evento{" + "id='" + id + '\'' + "titulo='" + titulo + '\'' + ", dataInicio=" + dataInicio
+				+ ", dataFinal=" + dataFinal + '}';
 	}
 }

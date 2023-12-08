@@ -11,8 +11,9 @@ import com.example.demo.entidades.Evento;
 @Repository
 public class EventoRepositorio {
 	private final List<Evento> eventos;
+	//Evitar números mágicos
 	private int proximoId = 1;
-
+	//Uso de Injeção de Dependência
 	@Autowired
 	public EventoRepositorio(List<Evento> eventos) {
 		this.eventos = eventos;
@@ -21,7 +22,7 @@ public class EventoRepositorio {
 	public List<Evento> obterTodosEventos() {
 		return eventos;
 	}
-
+	//Mensagens de Erro Significativas
 	public Evento obterEventoPorId(int idEvento) {
 		return eventos.stream().filter(evento -> evento.getId() == idEvento).findFirst()
 				.orElseThrow(() -> new NoSuchElementException("Evento não encontrado com o ID: " + idEvento));

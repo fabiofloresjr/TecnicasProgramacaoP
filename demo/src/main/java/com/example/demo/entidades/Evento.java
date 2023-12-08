@@ -1,13 +1,15 @@
 package com.example.demo.entidades;
 
 import java.time.LocalDateTime;
-
+//Nomes muito claros
+//Sem comentários desnecessários
 public class Evento {
 	private String titulo;
 	private LocalDateTime dataInicio;
 	private LocalDateTime dataFinal;
 	private int id;
-
+	//Boas Práticas de Construtor
+	//No máximo 4 ou 5 parâmetros.
 	public Evento(String titulo, LocalDateTime dataInicio, LocalDateTime dataFinal) {
 		this.titulo = titulo;
 		this.dataInicio = dataInicio;
@@ -17,7 +19,7 @@ public class Evento {
 	public Evento() {
 		super();
 	}
-
+	//Encapsulamento
 	public String getTitulo() {
 		return titulo;
 	}

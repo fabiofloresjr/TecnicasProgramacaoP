@@ -8,7 +8,7 @@ import com.example.demo.entidades.Evento;
 
 import excecoes.DatasInvalidasException;
 import excecoes.TituloInvalidoException;
-
+//Tratamento de Exceção Adequado e claro
 @Component
 public class EventoValidador {
 	public boolean validarEvento(Evento evento) throws TituloInvalidoException, DatasInvalidasException {

@@ -10,7 +10,7 @@ import com.example.demo.entidades.Evento;
 public interface EventoServico {
 	List<Evento> obterTodosEventos();
     Evento obterEventoPorId(int idEvento);
-    void adicionarEvento(Evento evento) throws Exception;
+    void salvarEvento(Evento evento) throws Exception;
     void atualizarEvento(Evento evento) throws Exception;
     void excluirEvento(int idEvento) throws Exception;
 }

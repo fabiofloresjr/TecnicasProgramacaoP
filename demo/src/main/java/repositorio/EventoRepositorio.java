@@ -1,6 +1,7 @@
 package repositorio;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,10 +26,10 @@ public class EventoRepositorio {
         return eventos.stream()
                 .filter(evento -> evento.getId() == idEvento)
                 .findFirst()
-                .orElse(null);
+                .orElseThrow(() -> new NoSuchElementException("Evento não encontrado com o ID: " + idEvento));
     }
 
-    public void adicionarEvento(Evento evento) {
+    public void salvarEvento(Evento evento) {
         evento.setId(proximoId++);
         eventos.add(evento);
     }

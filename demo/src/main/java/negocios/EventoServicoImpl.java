@@ -30,9 +30,9 @@ public class EventoServicoImpl implements EventoServico {
     }
 
     @Override
-    public void adicionarEvento(Evento evento) throws Exception {
+    public void salvarEvento(Evento evento) throws Exception {
         eventoValidador.validarEvento(evento);
-		eventoRepositorio.adicionarEvento(evento);
+		eventoRepositorio.salvarEvento(evento);
     }
 
     @Override

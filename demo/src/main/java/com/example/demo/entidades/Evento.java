@@ -30,7 +30,7 @@ public class Evento {
 		return dataInicio;
 	}
 
-	public void setHorarioInicio(LocalDateTime dataInicio) {
+	public void setDataInicio(LocalDateTime dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
@@ -38,7 +38,7 @@ public class Evento {
 		return dataFinal;
 	}
 
-	public void setHorarioFim(LocalDateTime dataFinal) {
+	public void setDataFinal(LocalDateTime dataFinal) {
 		this.dataFinal = dataFinal;
 	}
 
@@ -50,7 +50,7 @@ public class Evento {
 		this.id = id;
 	}
 
-	public boolean isEventoFuturo() {
+	public boolean ehEventoFuturo() {
 		return dataInicio.isAfter(LocalDateTime.now());
 	}
 

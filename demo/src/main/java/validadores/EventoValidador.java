@@ -11,15 +11,15 @@ import excecoes.TituloInvalidoException;
 
 @Component
 public class EventoValidador {
-    public boolean validarEvento(Evento evento) throws TituloInvalidoException, DatasInvalidasException {
-    	return validarTitulo(evento.getTitulo()) && validarDatas(evento.getDataInicio(), evento.getDataFinal());
-    }
+	public boolean validarEvento(Evento evento) throws TituloInvalidoException, DatasInvalidasException {
+		return validarTitulo(evento.getTitulo()) && validarDatas(evento.getDataInicio(), evento.getDataFinal());
+	}
 
-    private static boolean validarTitulo(String titulo) {
-        return titulo != null && !titulo.trim().isEmpty();
-    }
+	private static boolean validarTitulo(String titulo) {
+		return titulo != null && !titulo.trim().isEmpty();
+	}
 
-    private static boolean validarDatas(LocalDateTime dataInicio, LocalDateTime dataFinal) {
-        return dataInicio != null && dataFinal != null && !dataInicio.isAfter(dataFinal);
-    }
+	private static boolean validarDatas(LocalDateTime dataInicio, LocalDateTime dataFinal) {
+		return dataInicio != null && dataFinal != null && !dataInicio.isAfter(dataFinal);
+	}
 }

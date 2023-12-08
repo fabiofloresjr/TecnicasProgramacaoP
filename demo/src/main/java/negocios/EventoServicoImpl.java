@@ -19,30 +19,30 @@ public class EventoServicoImpl implements EventoServico {
 	@Autowired
 	private EventoValidador eventoValidador;
 
-    @Override
-    public List<Evento> obterTodosEventos() {
-        return eventoRepositorio.obterTodosEventos();
-    }
+	@Override
+	public List<Evento> obterTodosEventos() {
+		return eventoRepositorio.obterTodosEventos();
+	}
 
-    @Override
-    public Evento obterEventoPorId(int idEvento) {
-        return eventoRepositorio.obterEventoPorId(idEvento);
-    }
+	@Override
+	public Evento obterEventoPorId(int idEvento) {
+		return eventoRepositorio.obterEventoPorId(idEvento);
+	}
 
-    @Override
-    public void salvarEvento(Evento evento) throws Exception {
-        eventoValidador.validarEvento(evento);
+	@Override
+	public void salvarEvento(Evento evento) throws Exception {
+		eventoValidador.validarEvento(evento);
 		eventoRepositorio.salvarEvento(evento);
-    }
+	}
 
-    @Override
-    public void atualizarEvento(Evento evento) throws Exception {
+	@Override
+	public void atualizarEvento(Evento evento) throws Exception {
 		eventoValidador.validarEvento(evento);
 		eventoRepositorio.atualizarEvento(evento);
-    }
+	}
 
-    @Override
-    public void excluirEvento(int idEvento) throws Exception {
-        eventoRepositorio.excluirEvento(idEvento);
-    }
+	@Override
+	public void excluirEvento(int idEvento) throws Exception {
+		eventoRepositorio.excluirEvento(idEvento);
+	}
 }

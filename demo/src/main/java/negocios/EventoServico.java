@@ -9,8 +9,12 @@ import com.example.demo.entidades.Evento;
 @Service
 public interface EventoServico {
 	List<Evento> obterTodosEventos();
-    Evento obterEventoPorId(int idEvento);
-    void salvarEvento(Evento evento) throws Exception;
-    void atualizarEvento(Evento evento) throws Exception;
-    void excluirEvento(int idEvento) throws Exception;
+
+	Evento obterEventoPorId(int idEvento);
+
+	void salvarEvento(Evento evento) throws Exception;
+
+	void atualizarEvento(Evento evento) throws Exception;
+
+	void excluirEvento(int idEvento) throws Exception;
 }
